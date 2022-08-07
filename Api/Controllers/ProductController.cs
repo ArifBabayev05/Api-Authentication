@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -6,6 +6,7 @@ using Api.Commons;
 using Business.DTO.Product;
 using DAL.Data;
 using DAL.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -15,7 +16,7 @@ using Microsoft.EntityFrameworkCore;
 namespace Api.Controllers
 {
     [Route("api/{controller}")]
-    [ApiController]
+    [ApiController, Authorize]
     public class ProductController : ControllerBase
     {
         private readonly AppDbContext _context;
