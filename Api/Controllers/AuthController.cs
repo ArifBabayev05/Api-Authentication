@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
@@ -103,11 +104,13 @@ namespace Api.Controllers
                 audience: audience,
                 issuer: issuer,
                 claims: claims,
-                expires: System.DateTime.UtcNow.AddHours(4).AddMinutes(15),
+                expires: DateTime.UtcNow.AddHours(4).AddMinutes(15),
                 signingCredentials: signingCredentials
                 );
 
             var token = new JwtSecurityTokenHandler().WriteToken(securityToken);
+
+
             
                 
            
